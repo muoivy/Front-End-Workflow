@@ -1,0 +1,8 @@
+! function() { // limit scope
+
+    $(function() {
+
+        
+    });
+
+}();

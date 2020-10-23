@@ -1,0 +1,38 @@
+{
+  "name": "front-end-workflow",
+  "version": "1.0.0",
+  "description": "An organized front-end workflow for your next project using gulp.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muoivy/Front-End-Workflow.git"
+  },
+  "author": "Tran Muoi Vy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muoivy/Front-End-Workflow/issues"
+  },
+  "homepage": "https://github.com/muoivy/Front-End-Workflow#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "browsersync-ssi": "^0.2.4",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-ssi": "0.0.92",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-noop": "^1.0.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-pleeease": "^2.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-wait": "0.0.2"
+  }
+}

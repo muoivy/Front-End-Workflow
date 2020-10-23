@@ -1,0 +1,107 @@
+.u-align {
+  &-l {
+    text-align: left !important;
+    &--pc {
+      @include pc {
+        text-align: left !important;
+      }
+    }
+    &--sp {
+      @include sp {
+        text-align: left !important;
+      }
+    }
+  }
+  &-c {
+    text-align: center !important;
+    &--pc {
+      @include pc {
+        text-align: center !important;
+      }
+    }
+    &--sp {
+      @include sp {
+        text-align: center !important;
+      }
+    }
+  }
+  &-r {
+    text-align: right !important;
+    &--pc {
+      @include pc {
+        text-align: right !important;
+      }
+    }
+    &--sp {
+      @include sp {
+        text-align: right !important;
+      }
+    }
+  }
+}
+.u-valign {
+  &-t {
+    vertical-align: top !important;
+    &--pc {
+      @include pc {
+        vertical-align: top !important;
+      }
+    }
+    &--sp {
+      @include sp {
+        vertical-align: top !important;
+      }
+    }
+  }
+  &-m {
+    vertical-align: middle !important;
+    &--pc {
+      @include pc {
+        vertical-align: middle !important;
+      }
+    }
+    &--sp {
+      @include sp {
+        vertical-align: middle !important;
+      }
+    }
+  }
+  &-b {
+    vertical-align: bottom !important;
+    &--pc {
+      @include pc {
+        vertical-align: bottom !important;
+      }
+    }
+    &--sp {
+      @include sp {
+        vertical-align: bottom !important;
+      }
+    }
+  }
+}
+
+.u-switch {
+  &-reverse {
+    direction: rtl;
+    >* {
+      direction: ltr;
+    }
+    &--pc {
+      @include pc {
+        direction: rtl;
+        >* {
+          direction: ltr;
+        }
+      }
+    }
+    &--sp {
+      @include sp {
+        direction: rtl;
+        >* {
+          direction: ltr;
+        }
+      }
+    }
+  }
+}
