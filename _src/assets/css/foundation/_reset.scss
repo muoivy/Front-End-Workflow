@@ -104,20 +104,3 @@ input,
 select {
   vertical-align: middle;
 }
-textarea {
-	resize: none;
-}
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-::-ms-expand {
-	display: none;
-}
-select::-ms-expand {
-	display: none;
-}
