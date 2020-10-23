@@ -9,7 +9,8 @@
 
 html {
   box-sizing: border-box;
-  -ms-overflow-style: scrollbar;
+  -ms-text-size-adjust:100%;
+  -webkit-text-size-adjust:100%
 }
 
 body {
@@ -21,7 +22,7 @@ body {
   letter-spacing: 0.05em;
   min-width: 1040px;
 
-  @include sp {
+  @include sp() {
     font-size: vw(28);
     min-width: 100%;
   }
@@ -48,12 +49,12 @@ img {
   vertical-align: middle;
   height: auto;
 
-  @include sp {
+  @include sp() {
     width: 100%;
   }
 }
 
-.container {
+.inner {
   width: 940px;
   margin: 0 auto;
 

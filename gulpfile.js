@@ -3,7 +3,7 @@
   'use strict';
 
   /*
-  npm install --save-dev gulp gulp-noop gulp-sass gulp-sass-glob gulp-sourcemaps gulp-plumber gulp-pleeease gulp-wait gulp-notify gulp-concat gulp-uglify browser-sync browsersync-ssi del gulp-html-ssi gulp-imagemin
+  npm install --save-dev gulp gulp-noop gulp-sass gulp-sass-glob gulp-sourcemaps gulp-plumber gulp-pleeease gulp-wait gulp-notify gulp-concat gulp-uglify browser-sync browsersync-ssi del gulp-html-ssi gulp-imagemin cross-env
   */
 
   /*
@@ -69,6 +69,9 @@
       opacity: true,
       pseudoElements: false,
       minifier: true,
+      minifier: {
+        removeAllComments: true,
+      }
     }))
     .pipe(sourcemaps ? sourcemaps.write() : noop())
     .pipe(notify('Complete Sass'))
@@ -156,7 +159,7 @@
     return src(sources.image)
       .pipe(imagemin([
         imagemin.gifsicle({ interlaced: true }),
-        imagemin.jpegtran({ progressive: true }),
+        imagemin.mozjpeg({ quality: 75, progressive: true }),
         imagemin.optipng({ optimizationLevel: 5 }),
         imagemin.svgo({
           plugins: [
@@ -194,8 +197,8 @@
 
   //Build
   exports.build = series(
-    parallel(scssTask, jsTask),
     delDist,
+    parallel(scssTask, jsTask),
     copyApp,
     htmlSSI,
     imagesMin,

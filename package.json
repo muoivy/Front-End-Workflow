@@ -4,7 +4,7 @@
   "description": "An organized front-end workflow for your next project using gulp.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=development gulp",
     "build": "cross-env NODE_ENV=production gulp build"
   },
   "repository": {
@@ -20,6 +20,7 @@
   "devDependencies": {
     "browser-sync": "^2.26.13",
     "browsersync-ssi": "^0.2.4",
+    "cross-env": "^7.0.2",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
