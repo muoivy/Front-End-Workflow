@@ -82,7 +82,7 @@
   /**************** JavaScript Task ****************/
   function jsTask() {
     var paths = [
-      `${sources.scripts}/libs/jquery-2.1.3.min.js`,
+      `${sources.scripts}/_libs/jquery-2.1.3.min.js`,
     ]
     return src(paths)
       .pipe(concat('bundle.js'))
@@ -180,8 +180,8 @@
       `${dirs.dest}/assets/css/object`,
       `${dirs.dest}/assets/css/_structure`,
       `${dirs.dest}/assets/css/_unique`,
-      `${dirs.dest}/assets/include`,
-      `${dirs.dest}/assets/js/libs`,
+      `${dirs.dest}/assets/_include`,
+      `${dirs.dest}/assets/js/_libs`,
     ];
     return del(delList, { force: true });
   }
