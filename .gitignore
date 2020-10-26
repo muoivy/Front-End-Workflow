@@ -127,5 +127,5 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/linux,windows,osx,node
 # Manual setting
 _html
-_src/assets/css/*.css
 package-lock.json
+/_src/assets/css/*.css
