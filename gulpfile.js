@@ -28,6 +28,7 @@
     uglify = require('gulp-uglify'),
     browserSync = devBuild ? require('browser-sync').create() : null,
     ssi = require('browsersync-ssi'),
+    connect = require('gulp-connect-php'),
     del = require('del'),
     includer = require('gulp-html-ssi'),
     imagemin = require('gulp-imagemin');
@@ -44,6 +45,7 @@
   // File Sources
   const sources = {
     html: `${dirs.src}/**/*.html`,
+    php: `${dirs.src}/**/*.php`,
     styles: `${dirs.src}/assets/css`,
     scripts: `${dirs.src}/assets/js`,
     image: `${dirs.src}/**/*.{png,jpg,gif,svg}`,
@@ -51,7 +53,7 @@
 
   /**************** CSS task ****************/
   function scssTask() {
-    return src(`${sources.styles}/style.scss`)
+    return src(`${sources.styles}/layout.scss`)
     .pipe(wait(1500))
     .pipe(plumber({ errorHandler: notify.onError('Error on <gulp sass>: <%= error.message %>') }))
     .pipe(sassGlob())
@@ -82,7 +84,7 @@
   /**************** JavaScript Task ****************/
   function jsTask() {
     var paths = [
-      `${sources.scripts}/_libs/jquery-2.1.3.min.js`,
+      `${sources.scripts}/_libs/jquery-1.11.3.min.js`,
     ]
     return src(paths)
       .pipe(concat('bundle.js'))
@@ -94,9 +96,10 @@
   /**************** Server Task ****************/
 
   const syncConfig = {
-    server: {
-      baseDir: dirs.src,
-    },
+    proxy: '127.0.0.1:1006',
+    // server: {
+    //   baseDir: dirs.src,
+    // },
     middleware: ssi({
       baseDir: __dirname + '/_src',
       ext: ".html"
@@ -108,7 +111,11 @@
 
   // Browser Sync
   function server(done) {
-    if (browserSync) browserSync.init(syncConfig);
+    connect.server({
+      base: dirs.src,
+    }, function (){
+      if (browserSync) browserSync.init(syncConfig);
+    });
     done();
   }
 
@@ -129,6 +136,8 @@
 
     // Html changes
     watch(sources.html, serverReload);
+
+    //watch(sources.php, serverReload);
 
     done();
   }
@@ -174,6 +183,7 @@
   // Delete file not used
   function delNotUsed() {
     var delList = [
+      `${dirs.dest}/assets/inc`,
       `${dirs.dest}/assets/css/**/*.scss`,
       `${dirs.dest}/assets/css/foundation`,
       `${dirs.dest}/assets/css/layout`,

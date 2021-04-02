@@ -16,6 +16,11 @@ $config_sp_scale_font : 2;
   @return #{$vw}vw;
 }
 
+// letter-spacing計算
+@function lsp($letter_spacing, $font_size) {
+  @return $letter_spacing / $font_size * 1em;
+}
+
 // pw( designSIZE ) %指定
 @function pw($base_design_width, $design_width_psd) {
   $pw: $design_width_psd / $base_design_width * 100 + '%';
@@ -36,16 +41,16 @@ $config_sp_scale_font : 2;
 
 
 // breakpoint ---------------------------------------------------------------------------
-$breakpoint-pc: 769px;
-$breakpoint-sp: 768px;
+$breakpoint-pc: 768px;
+$breakpoint-sp: 767px;
 @mixin pc() {
   @media screen and (min-width: $breakpoint-pc), print {
     @content;
   }
 }
+
 @mixin sp() {
   @media screen and (max-width: $breakpoint-sp) {
     @content;
   }
 }
-

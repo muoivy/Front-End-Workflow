@@ -1,7 +1,7 @@
 {
-  "name": "front-end-workflow",
+  "name": "workflow",
   "version": "1.0.0",
-  "description": "An organized front-end workflow for your next project using gulp.",
+  "description": "",
   "main": "gulpfile.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development gulp",
@@ -24,6 +24,7 @@
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.3",
     "gulp-html-ssi": "0.0.92",
     "gulp-imagemin": "^7.1.0",
     "gulp-noop": "^1.0.1",

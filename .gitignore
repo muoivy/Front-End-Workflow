@@ -128,4 +128,6 @@ $RECYCLE.BIN/
 # Manual setting
 _html
 package-lock.json
-/_src/assets/css/*.css
+/_src/assets/css/layout.css
+/_src/assets/js/bundle.js
+
