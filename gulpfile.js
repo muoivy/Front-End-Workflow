@@ -96,10 +96,10 @@
   /**************** Server Task ****************/
 
   const syncConfig = {
-    proxy: '127.0.0.1:1006',
-    // server: {
-    //   baseDir: dirs.src,
-    // },
+    // proxy: '127.0.0.1:1006',
+    server: {
+      baseDir: dirs.src,
+    },
     middleware: ssi({
       baseDir: __dirname + '/_src',
       ext: ".html"
